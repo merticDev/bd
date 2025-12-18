@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-]</title>
+    <link rel="shortcut icon" href="imgs/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="zajimavosti.css">
+</head>
+<body onload="timer()">
+    <header>
+        <h1>Pár zajímavostí</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Čas od tvého narození</h2>
+            <p class="timeFrom"></p>
+        </article>
+        <article>
+            <h2>Čas do dalších narozenin</h2>
+            <p class="timeTo"></p>
+        </article>
+        <article>
+            <h2>Rok 2008 je už daleko</h2>
+            <p>Takto třeba vypadalo prosincové číslo Přeloučského Roštu</p>
+            <img src="imgs/Snímek obrazovky 2025-12-17 211754.png" alt="rost">
+            <p>Nebo takto vypadal předvánoční Google téhož dne</p>
+            <img src="imgs/Snímek obrazovky 2025-12-17 212242.png" alt="Google">
+        </article>
+        <article>
+            <h2>Za svůj život jsi už stihla mnoho věcí</h2>
+            <p>Například:</p>
+            <ul>
+                <li>Dostudovat základní školu</li>
+                <li>Přežít covid</li>
+                <li>Procestovat mnoho míst</li>
+                <li>Částecně se přestěhovat</li>
+                <li>Nabrat spostu zkušeností</li>
+            </ul>
+            <p>Ale hlavně jsi potkala spostu zajímavých lidí 😁👍</p>
+        </article>
+    </main>
+    <footer>
+        <a href="nav.html">-></a>
+    </footer>
+</body>
+</html>
+<script>
+    let targetTo = new Date("2026-12-23T00:00:00").getTime();
+    let targetFrom = new Date("2008-12-23T00:00:00").getTime();
+    let interval;
+    function countdown(){
+        let actual = new Date();
+
+        let to = targetTo - actual;
+        const days = Math.floor(to / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((to / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((to / (1000 * 60)) % 60);
+        const seconds = Math.floor((to / 1000) % 60);
+        document.querySelector(".timeTo").innerHTML = days+" dní "+hours+" hodin "+minutes+" minut a "+seconds+" sekund";
+
+        let from = actual - targetFrom;
+        const dni = Math.floor(from / (1000 * 60 * 60 * 24));
+        const hodin = Math.floor((from / (1000 * 60 * 60)) % 24);
+        const minut = Math.floor((from / (1000 * 60)) % 60);
+        const sekund = Math.floor((from / 1000) % 60);
+        document.querySelector(".timeFrom").innerHTML = dni+" dní "+hodin+" hodin "+minut+" minut a "+sekund+" sekund";
+
+    }
+    function timer(){
+        countdown();
+        interval = setInterval(countdown, 1000)
+    }
+</script>

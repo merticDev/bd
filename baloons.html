@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-]</title>
+    <link rel="shortcut icon" href="imgs/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="baloons.css">
+</head>
+<body>
+    <h1>Tref pár balónků</h1>
+    <article class="underBaloons">
+        <p class="underText"></p>
+        <p class="underText"></p>
+        <p class="underText"></p>
+        <p class="underText"></p>
+    </article>
+    <article class="baloons">
+        <div onclick="pop(0)" class="baloon"><h2>1</h2></div>
+        <div onclick="pop(1)" class="baloon"><h2>2</h2></div>
+        <div onclick="pop(2)" class="baloon"><h2>3</h2></div>
+        <div onclick="pop(3)" class="baloon"><h2>4</h2></div>
+    </article>
+    <article class="kytka">
+        <div class="kvet">
+          <div class="lístek"></div>
+          <div class="lístek"></div>
+          <div class="lístek"></div>
+          <div class="lístek"></div>
+          <div class="lístek"></div>
+          <div class="lístek"></div>
+        </div>
+        <div class="střed"></div>
+        <div class="stonek"></div>
+        <div class="list levy"></div>
+        <div class="list pravy"></div>
+    </article>
+    <button onclick="next()">></button>
+</body>
+</html>
+<script>
+    let pocitadlo = 0
+    function pop(poradi){
+        document.querySelectorAll(".baloon")[poradi].style.scale = 0;
+        if(pocitadlo == 0){
+            document.querySelectorAll(".underText")[poradi].innerHTML = "Dobrá trefa"
+        } else if(pocitadlo == 1){
+            document.querySelectorAll(".underText")[poradi].innerHTML = "Ještě dva"
+        } else if(pocitadlo == 2){
+            document.querySelectorAll(".underText")[poradi].innerHTML = "Zbývá poslední"
+        } else if(pocitadlo == 3){
+            document.querySelectorAll(".underText")[poradi].innerHTML = "Vyhrála jsi kytičku🎁"
+            document.querySelector(".kytka").style.opacity = 1;
+            document.querySelector("button").style.opacity = 1;
+            document.querySelector(".kytka").style.scale = 1.5;
+            document.querySelector(".kytka").style.top = "60%";
+        }
+        pocitadlo +=1;
+    }
+    function next(){
+    window.location.href = "prani.html"
+  }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-]</title>
+    <link rel="shortcut icon" href="imgs/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>😞</h1>
+    <h2>Bohužel toto není správná odpověď</h2>
+    <button onclick="next()">Zkusit znovu</button>
+</body>
+</html>
+<script>
+    function next(){
+        window.location.href = "quiz.html"
+    }
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap');
+
+    :root{
+    --darkGreen: #264653;
+    --lightGreen: #2a9d8f;
+    --yellow: #e9c46a;
+    --orange: #f4a261;
+    --red: #e76f51;
+}
+    button{
+    font-family: "Comic Relief", system-ui;
+    border: 7px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    background-color: var(--lightGreen);
+    font-size: 3em;
+    padding: 10px 30px;
+    position: absolute;
+    top: 60%;
+    transition: 1s;
+}
+h1{
+    font-size: 8em;
+    text-align: center;
+    margin: 30px;
+}
+h2{
+    color: var(--darkGreen);
+    font-size: 2.5em;
+    text-align: center;
+}
+body {
+    background-color: var(--red);
+    font-family: "Comic Relief", system-ui;
+    padding: 5% 8%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+</style>

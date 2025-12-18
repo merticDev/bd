@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap');
+
+
+:root{
+    --darkGreen: #264653;
+    --lightGreen: #2a9d8f;
+    --yellow: #e9c46a;
+    --orange: #f4a261;
+    --red: #e76f51;
+}
+body{
+    font-family: "Comic Relief", system-ui;
+    background-color: var(--darkGreen);
+    padding: 5% 8%;
+}
+h1{
+    color: var(--red);
+    font-size: 3em;
+    text-align: center;
+    margin: 30px;
+}
+h2{
+    color: var(--orange);
+    font-size: 2.5em;
+    text-align: center;
+}
+p{
+    color: var(--darkGreen);
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+section{
+    margin: 10% 0 0;
+}
+.ano{
+    background-color: var(--lightGreen);
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+.ne{
+    background-color: var(--red);
+    position: absolute;
+    top: 50%;
+    right: 40%;
+}
+.dobre{
+    background-color: #e76f51;
+    display: flex;
+    justify-self: center;
+}
+button{
+    font-family: "Comic Relief", system-ui;
+    font-size: 2em;
+    padding: 20px;
+    border: 7px solid black;
+    color: antiquewhite;
+    border-radius: 30px;
+    cursor: pointer;
+}
+button:hover{
+    opacity: 0.8;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+#doporuceni{
+    position: absolute;
+    background-color: var(--yellow);
+    width: 20%;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 10px 10px 0px 10px var(--red);
+}
+.step{
+    opacity: 0;
+    transform: translateY(10px);
+}
+.step:hover{
+    opacity: 0;
+}
+.play .step{
+    animation: show 0.6s ease forwards;
+}
+.play .step:nth-child(2) { animation-delay: 1s; }
+.play .step:nth-child(3) { animation-delay: 3s; }
+.play .step:nth-child(4) { animation-delay: 4s; }
+.play .step:nth-child(5) { animation-delay: 7s; }
+
+@keyframes show {
+    to {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+#predLety button{
+    color: white;
+    background-color: var(--red);
+    font-size: 3em;
+    padding: 10px 30px;
+}
+
+
+
+@media(max-width: 1200px){
+    .ne{
+        right: 23%;
+    }
+    .ano{
+        left:  23%;
+    }
+    #doporuceni{
+        width: 45%;
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap');
+
+:root{
+    --darkGreen: #264653;
+    --lightGreen: #2a9d8f;
+    --yellow: #e9c46a;
+    --orange: #f4a261;
+    --red: #e76f51;
+}
+
+body{
+    font-family: "Comic Relief", system-ui;
+    background-color: var(--yellow);
+    padding: 7% 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+h1{
+    color: var(--red);
+    font-size: 3em;
+    text-align: center;
+    margin: 30px;
+}
+h2{
+    padding-top: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.79);
+}
+
+button{
+    font-family: "Comic Relief", system-ui;
+    border: 7px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    opacity: 0;
+    color: white;
+    background-color: var(--red);
+    font-size: 3em;
+    padding: 10px 30px;
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    transition: 1s;
+}
+
+
+.baloon {
+    width: 130px;
+    height: 160px;
+    background: radial-gradient(circle at 30% 30%, #d49d90, var(--red));
+    border-radius: 50% 50% 45% 45%;
+    position: relative;
+    margin: 40px;
+    transition: 0.3s ease-in;
+    scale: 1;
+  }
+  /*uzel*/
+.baloon::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 14px;
+    background: var(--red);
+    border-radius: 50%;
+}
+  /*provaz*/
+.baloon::after {
+    content: "";
+    position: absolute;
+    bottom: -110px;
+    left: 50%;
+    width: 2px;
+    height: 100px;
+    background: #aaa;
+}
+.baloons{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 40%;
+}
+
+
+.underText{
+    width: 130px;
+    height: 160px;
+    position: relative;
+    margin: 40px;
+    text-align: center;
+    color: var(--lightGreen);
+    font-size: 1.3em;
+}
+.underBaloons{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: calc(40% + 70px);
+}
+
+
+.kytka {
+    position: absolute;
+    width: 140px;
+    height: 220px;
+    margin: 40px auto;
+    top: 80%;
+    scale: 0.3;
+    transition: 1s;
+    opacity: 0;
+  }
+  
+  /* obal květu */
+  .kvet {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translateX(-50%);
+    z-index: 4;
+
+  }
+  
+  /* okvětní lístek */
+  .lístek {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: #ff69b4;
+    border-radius: 50% 50% 50% 50%;
+    top: 20px;
+    left: 30px;
+    transform-origin: 50% 80%;
+  }
+  
+  /* rotace lístků */
+  .lístek:nth-child(1) { transform: rotate(0deg) translateY(-20px); }
+  .lístek:nth-child(2) { transform: rotate(60deg) translateY(-20px); }
+  .lístek:nth-child(3) { transform: rotate(120deg) translateY(-20px); }
+  .lístek:nth-child(4) { transform: rotate(180deg) translateY(-20px); }
+  .lístek:nth-child(5) { transform: rotate(240deg) translateY(-20px); }
+  .lístek:nth-child(6) { transform: rotate(300deg) translateY(-20px); }
+  
+  /* střed květu */
+
+  /* stonek */
+  .stonek {
+    width: 6px;
+    height: 120px;
+    background: #4caf50;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+  }
+  
+  /* listy */
+  .list {
+    width: 45px;
+    height: 22px;
+    background: #66bb6a;
+    position: absolute;
+    top: 150px;
+    border-radius: 22px 0;
+  }
+  
+  .list.levy {
+    left: 25px;
+    transform: rotate(-25deg);
+  }
+  
+  .list.pravy {
+    right: 25px;
+    transform: rotate(25deg) scaleX(-1);
+  }
+  .střed {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #fff176, #fbc02d);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+
+
+@media(max-width: 1200px){
+  .baloon{
+    width: 80px;
+    height: 100px;
+    margin: 10px;
+  }
+  .underText{
+    width: 80px;
+    height: 100px;
+    margin: 10px; 
+  }
+  button{
+    font-size: 2em;
+    padding: 7px 20px;
+    border-radius: 20px;
+  }
+}
+@media(max-width: 750px){
+  button{
+    top: 30%;
+    left: 40%;
+  }
+}

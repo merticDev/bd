@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-]</title>
+    <link rel="shortcut icon" href="imgs/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <section class="head">
+        <h1>Ještě si dáme malý kvíz</h1>
+        <p style="scale: 0;">😄</p>
+        <h2 class="h2" style="display: none;">Gratuluji prošla jsi kvízem🥳</h2>
+        <button class="nextButton" style="opacity: 0;" onclick="next()">></button>
+    </section>
+    <section class="otazka" style="display: flex;">
+        <h2>Kolik balónků jsi trefovala</h2>
+        <div>
+            <button onclick="ano()">4</button>
+            <button onclick="ne()">5</button>
+        </div>
+    </section>
+    <section class="otazka" style="display: none;">
+        <h2>Co znamená jméno Karolína🤔</h2>
+        <div>
+            <button onclick="ano()">Královna</button>
+            <button onclick="ne()">Korále</button>
+        </div>
+    </section>
+    <section class="otazka" style="display: none;">
+        <h2>Kdy to mezi námi začalo🧐</h2>
+        <div>
+            <button onclick="ne()">17. 6. 2024</button>
+            <button onclick="ano()">17. 5. 2024</button>
+        </div>
+    </section>
+    <section class="final"  style="display: none; ">
+        <h1>A jsme ve finále</h1>
+        <h2>Teď už je tu jen pár zajímavých věcí, na které se můžeš podívat</h2>
+        <button class="nextButton" onclick="nextPage()">></button>
+    </section>
+</body>
+</html>
+<script>
+    let sekce = document.querySelectorAll(".otazka");
+    let index = 0;
+    let scale = 0;
+
+    function ano() {
+        sekce[index].style.display = "none";
+        index++;
+        scale +=1.5;
+
+        if (index < sekce.length) {
+            sekce[index].style.display = "flex";
+        } else {
+            document.querySelector(".h2").style.display = "block";
+            document.querySelector(".nextButton").style.opacity = 1
+        }
+        document.querySelector("p").style.scale = scale;
+    }
+    function ne() {
+        window.location.href = "badAnswer.html"
+    }
+    function next(){
+        sekce[2].style.display = "none";
+        document.querySelector(".head").style.display = "none"
+        document.querySelector(".final").style.display = "block"
+    }
+    function nextPage(){
+        window.location.href = "nav.html"
+    }
+
+</script>

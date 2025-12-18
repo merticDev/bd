@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-]</title>
+    <link rel="shortcut icon" href="imgs/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="odpocet()">
+    <section id="uvod">
+        <article>
+            <h1>ČEKÁ NĚCO SPECIÁLNÍHO🤫</h1>   
+        </article>
+        <h2 id="h2"></h2>
+    </section>
+    <section id="priprava" style="display: none;">
+        <article>
+            <h1>Jsi připravena začít?</h1>
+            <div class="btnDiv">
+                <button onclick="ano()" class="ano">Ano</button>
+                <button onclick="ne()" class="ne">Ne</button>
+            </div>
+        </article>
+    </section>
+    <section id="sama" style="display: none;">
+        <article>
+            <h1>Jsi sama?</h1>
+            <div class="btnDiv">
+                <button onclick="ano()" class="ano">Ano</button>
+                <button onclick="ne()" class="ne">Ne</button>
+            </div>
+            <div id="doporuceni" style="display: none;">
+                <p>Je doporučeno být u tohoto poprvé sama ať si to pořádně vychutnáš</p>
+                <button onclick="document.querySelector('#doporuceni').style.display = 'none';" class="dobre">Dobře</button>
+            </div>
+        </article>
+    </section>
+    <section id="countdown"  style="font-size: 6em; display: none;">
+        <article>
+            <h1 id="counter">3</h1>
+        </article>
+    </section>
+    <section id="predLety" style="display: none;">
+        <article id="show">
+            <h1 class="step" id="years"></h1>   
+            <h2 class="step">Spíš se narodil někdo spešl</h2>
+            <p class="step" style="color: #e9c46a;">A to se musí pořádně oslavit🥳</p>
+            <button onclick="nextAnimation()" class="step">></button>
+        </article>
+    </section>
+</body>
+</html>
+<script>
+    
+    //let target = new Date("2025-12-23T00:00:00") 
+    let target = new Date("2025-12-12T21:33:30") 
+    let yearTarget = 2008;
+    let actual = new Date();
+    let interval;
+    let h1 = document.querySelector("#years");
+    let h2 = document.querySelector("#h2");
+    let neZmenaXY = document.querySelector(".ne");
+    let anoBigger = document.querySelector(".ano");
+    let counter = document.querySelector("#counter");
+    let neCount = 0;
+    let neOpacity = 1;
+    let neScale = 1;
+    let anoScale = 1;
+    let count = 4;
+
+    function zbytCas(){
+        let now = new Date();
+        let odp = target-now;
+    
+        const days = Math.floor(odp / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((odp / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((odp / (1000 * 60)) % 60);
+        const seconds = Math.floor((odp / 1000) % 60);
+
+        h2.innerHTML = "Zbývá " + days+" dní "+hours+" hodin "+minutes+" minut a "+seconds+" sekund"
+        if(odp <= 0){
+            clearInterval(interval)
+            h2.innerHTML = "";
+            document.querySelector("#uvod").style.display = "none";
+            document.querySelector("#priprava").style.display = "block";
+            return;
+        }
+    }
+    function odpocet(){
+        zbytCas()
+        interval = setInterval(zbytCas, 1000)
+    }
+
+    function ne(){
+        if(document.querySelector("#priprava").style.display == "block"){
+            if(neCount > 2){
+                neZmenaXY.innerHTML = "Zábava?";
+            }
+            if(neCount > 5){
+                neZmenaXY.innerHTML = "Ne";
+                neZmenaXY.style.display = "none";
+            }
+            let x = Math.floor(Math.random()*90+1)
+            let y = Math.floor(Math.random()*90+1)
+            neZmenaXY.style.top = y+"%";
+            neZmenaXY.style.right = x+"%";
+            neCount +=1;
+            neOpacity -=0.1;
+            neScale -=0.05;
+            anoScale += 0.05;
+            neZmenaXY.style.opacity = neOpacity;
+            neZmenaXY.style.scale = neScale;
+            anoBigger.style.scale = anoScale;
+        }else if(document.querySelector("#sama").style.display == "block"){
+            document.querySelector("#doporuceni").style.display = "block";
+        }
+        
+    }
+    function ano(){
+        if(document.querySelector("#priprava").style.display == "block"){
+            neZmenaXY.style.opacity = 1;
+            neZmenaXY.style.scale = 1;
+            anoBigger.style.scale = 1;
+            document.querySelector("#sama").style.display = "block";
+            document.querySelector("#priprava").style.display = "none";    
+        }else if(document.querySelector("#sama").style.display == "block"){
+            document.querySelector("#sama").style.display = "none";
+            document.querySelector("#countdown").style.display = "block";
+            counting();
+        }
+    }
+
+    function countdown(){
+        count--;
+        if(count < 1){
+            document.querySelector("#countdown").style.display = "none";
+            document.querySelector("#predLety").style.display = "block";
+            roky();
+        } else{
+            counter.innerHTML = count
+        }
+    }
+    function counting(){
+        countdown();
+        interval = setInterval(countdown, 1000);
+    }
+    function roky(){
+        let rokNow = actual.getFullYear();
+        let vyslYears = rokNow - yearTarget;
+        years.innerHTML = "Před " + vyslYears  + " lety se stalo něco spešl"
+        document.querySelector("#show").classList.add("play");
+    }
+
+    function nextAnimation(){
+        window.location.href = "dort.html"
+    }
+</script>

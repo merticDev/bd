@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap');
+
+:root{
+    --darkGreen: #264653;
+    --lightGreen: #2a9d8f;
+    --yellow: #e9c46a;
+    --orange: #f4a261;
+    --red: #e76f51;
+}
+h1{
+    color: var(--red);
+    font-size: 3em;
+    text-align: center;
+    margin: 30px;
+}
+h2{
+    color: var(--lightGreen);
+    font-size: 2.5em;
+    text-align: center;
+}
+p{
+    text-align: justify;
+    color: var(--darkGreen);
+
+}
+body {
+    background-color: var(--yellow);
+    font-family: "Comic Relief", system-ui;
+    padding: 5% 8%;
+    overflow: hidden;
+}
+button{
+    font-family: "Comic Relief", system-ui;
+    border: 7px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    opacity: 0;
+    color: white;
+    background-color: var(--red);
+    font-size: 3em;
+    padding: 10px 30px;
+    position: absolute;
+    top: 80%;
+    left: calc(50% - 30px);
+    transition: 1s;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .card {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+    transform: rotate(var(--cardRotate, 0deg));
+  }
+  /*
+  .card:hover {
+    transform: rotate( -5deg);
+  }
+  .card:hover .outside {
+    transform: rotateY( -130deg);
+  }
+*/
+
+.card {
+    animation: openCard 1s ease-in-out forwards;
+    animation-delay: 1s;
+    transform-origin: left center;
+  }
+  
+  .outside {
+    animation: openOutside 1s ease-in-out forwards;
+    animation-delay: 1s;
+    transform-origin: left center;
+  }
+
+  button{
+    animation: buttonOpacity 1s ease forwards;
+    animation-delay: 3s;
+  }
+  
+  /* animace karty */
+  @keyframes openCard {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-5deg);
+    }
+  }
+  
+  /* animace "outside" části */
+  @keyframes openOutside {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-130deg);
+    }
+  }
+
+  @keyframes buttonOpacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+
+  .outside, .inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+  }
+  .inside {
+    background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+    line-height: 2;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+  }
+  .outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    transform: rotateY(var(--outsideRotate, 0deg));
+  }
+  .front, .back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+  }
+  .front {
+    background-color: #ffffff;
+  }
+  .back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+  }
+  .outside h1 {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+  }
+  .inside h1 {
+    font-size: 100px;
+    line-height: 100px;
+}
+
+
+.srdce {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: var(--red);
+    transform: rotate(-45deg);
+    margin: 20px auto;
+    margin-top: 35%;
+}
+  
+  .srdce::before,
+  .srdce::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: var(--red);
+    border-radius: 50%;
+}
+  
+  .srdce::before {
+    top: -40px;
+    left: 0;
+}
+  
+  .srdce::after {
+    left: 40px;
+    top: 0;
+}
+
+
+
+
+
+@media(max-width: 800px){
+  h1{
+    font-size: 2em;
+  }
+  .card{
+    width: 400px;
+    height: 400px;
+  }
+  .front h1{
+    font-size: 1.5em;
+    margin: 5px;
+  }
+  .inside p{
+    font-size: 0.7em;
+  }
+  button{
+    font-size: 2em;
+    padding: 7px 20px;
+    border-radius: 20px;
+  }
+}

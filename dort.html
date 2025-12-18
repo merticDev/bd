@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-]</title>
+    <link rel="shortcut icon" href="imgs/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="dort.css">
+</head>
+<body>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+    <h1>Upekl jsem ti dort</h1>
+    <h2>Měla by jsi ho dozdobit<span>(klikni na něj)</span></h2>
+    <div class="container" onclick="candle()">
+        <div class="cake">
+          <div class="candle"></div>
+          <div class="top-layer"></div>
+          <div class="middle-layer"></div>
+          <div class="bottom-layer"></div>
+        </div>
+      </div>
+  <button onclick="next()">></button>
+</body>
+</html>
+<script>
+  function candle(){
+    if(document.querySelector("h2").textContent == "Měla by jsi ho dozdobit(klikni na něj)"){
+      document.querySelector(".candle").classList.add("candleRise")
+      document.querySelector("h2").innerHTML = "Teď si něco přej a sfoukni svíčku";
+    } else{
+      document.querySelector(".candle").style.setProperty("--vel",0);
+      document.querySelectorAll(".particle").forEach(p => {
+      p.classList.add("particleAnimation")
+    })
+    document.querySelector("button").style.opacity = 1;
+    }
+  }
+
+  function next(){
+    window.location.href = "baloons.html"
+  }
+</script>

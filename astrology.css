@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
+:root{
+    --dark: #111315;
+    --light: #f8f9fa;
+    --grey: #ced4da;
+}
+
+body{
+    font-family: "Domine", serif;
+    color: var(--light);
+    background-color: var(--dark);
+    padding: 0 15%;
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+h1{
+    font-size: 3em;
+}
+p{
+    font-size: 1.1em;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4% 0 8%;
+}
+img{
+    width: 100%;
+    max-width: max-content;
+}
+article{
+    padding: 80px 0;
+    border-bottom: 1px dotted var(--light);
+}
+article:last-child{
+    border: none;
+}
+article div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+}
+header img{
+    position: absolute;
+    width: 4%;
+}
+.first{
+    top: 7%;
+    right: 30%;
+}
+.sec{
+    top: 5%;
+    right: 27%;
+}
+.zver{
+    width: 150%;
+}
+a{
+    color: var(--grey);
+    font-size: 2em;
+    text-decoration: none;
+    border: 1px solid var(--grey);
+    border-radius: 20px;
+    padding: 10px;
+    transition: .5s;
+}
+a:hover{
+    color: var(--dark);
+    background-color: var(--grey);
+    transition: .5s;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 0 8%;
+}
