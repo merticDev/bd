@@ -83,6 +83,9 @@ div button:hover{
 @media(max-width: 700px){
     .otazka div{
         flex-direction: column;
-        
     }
+    .nextButton{
+        top: 70%;
+    }
+
 }
