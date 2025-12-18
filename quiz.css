@@ -43,7 +43,6 @@ body {
     font-size: 3em;
     padding: 10px 30px;
     position: absolute;
-    top: 60%;
     left: calc(50% - 30px);
     transition: 1s;
 }
@@ -84,10 +83,8 @@ div button:hover{
     .otazka div{
         flex-direction: column;
     }
-    .nextButton{
-        top: 80%;
-    }
 
 }
+
 
 
