@@ -48,6 +48,7 @@ article div{
 header img{
     position: absolute;
     width: 4%;
+    height: 4%;
 }
 .first{
     top: 7%;
@@ -59,6 +60,7 @@ header img{
 }
 .zver{
     width: 150%;
+    height: 150%;
 }
 a{
     color: var(--grey);
@@ -79,4 +81,5 @@ footer{
     flex-direction: column;
     align-items: flex-end;
     padding: 0 0 8%;
+
 }
