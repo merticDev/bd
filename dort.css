@@ -62,7 +62,7 @@ body {
   background-color: #ffffff;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 60%;
   left: 50%;
   border-radius: 8px;
   box-shadow: 0 20px 45px rgba(120, 76, 10, 0.25);
@@ -216,4 +216,5 @@ body {
     border-radius: 20px;
     top: 85%;
   }
+
 }
