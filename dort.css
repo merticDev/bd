@@ -202,7 +202,7 @@ body {
 @media(max-width: 1200px){
   .container{
     width: 300px;
-    top: 60%;
+    top: 65%;
   }
   h1{
     font-size: 2em;
@@ -218,3 +218,4 @@ body {
   }
 
 }
+
