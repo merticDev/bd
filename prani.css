@@ -57,7 +57,7 @@ button{
     margin: auto;
     left: 0;
     right: 0;
-    top: 0;
+    top: 10%;
     bottom: 0;
     -webkit-perspective: 1200px;
     perspective: 1200px;
@@ -226,4 +226,5 @@ button{
     padding: 7px 20px;
     border-radius: 20px;
   }
+
 }
