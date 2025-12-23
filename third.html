@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="imgs/favicon_io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="third.css">
 </head>
-<body>
+<body onload="lock()">
     <header>
         <h1>Tady máš ještě pár vzkazů (ještě jich pár určitě přibyde)</h1>
     </header>
@@ -32,11 +32,26 @@
             <h2>Honza</h2>
             <p>Všechno nejlepší, hodně zdraví a štěstí🎉</p>
         </article>
+        <article>
+            <h2>Natka pražská</h2>
+            <p>Ahoj Kájo, tento text ma sloužit jako krátké přání k narozeninám. Do takovéhoto psaní by se asi hodilo zmínit věci jako ať jsi šťastná, zdravá a ať se ti daří. Teď, když si tyto věci mohu odškrtnout… 
+… můžu si dovolit psát trochu jinak. Třeba o tom, že i když už se dneska nebavíme tak často jako dřív, ne každý den ani každý týden. Pořád existují lidé se kterými máš kus života prostě neoddělitelně spojený. A ty k nim pro mě patříš. Je zvláštní, jak nenapadne se dá od sebe oddálit. Ne kvůli hádce ani žádným hrotům, ale prostě proto, že škola nás zavedla do jiných měst.  Každá jsme si šla svou cestou a z „každý den“ se stalo „občas“. A pak „hlavně o prázdninách“. Ale nikdy jsem nechtěla aby ty společné věci zmizely.
+Dnes už spolu sice nesdílíme každodenní starosti a nevíme o sobě každou maličkost. Ale když si na ty chvíle vzpomenu, mám v tom klid. Ne smutek. Přijde mi, že některá přátelští se dají uchovat i tehdy, když v nich chybí každodenní interakce. 
+Tak ti k narozeninám přeju přesně to, co se těžko píše do klasických přání: ať máš kolem sebe lidi, se kterými se můžeš smát tak přirozeně, jako jsme se smály my. Ať tě život baví, i když občas změní směr. A ať si jednou řekneš, že i s těmi staršími kamarády jsi kdysi hrála Simíky.</p>
+        </article>
     </main>
     <footer>
         <a href="nav.html">-></a>
     </footer>
 </body>
-
 </html>
+<script>
+    function lock(){
+        let heslo = prompt("Zadej radši klíč");
+        if(heslo != 0){
+            window.location.href = "nav.html"
+        }
+    }
+</script>
+
 
